@@ -20,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <h1>Taylor</h1>
     </div>
   );
 }
