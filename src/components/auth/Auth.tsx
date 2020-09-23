@@ -1,9 +1,14 @@
 import React from 'react'
+import { AuthDisplay } from './AuthDisplay'
 
-const Auth = () => {
+type Props = {
+    updateToken: (newToken: string) => void;
+}
+
+const Auth = (props: Props) => {
     return (
         <div>
-            <h1>Login / Signup</h1>
+            <AuthDisplay updateToken={props.updateToken} />
         </div>
     )
 }

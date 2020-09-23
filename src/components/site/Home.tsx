@@ -1,9 +1,14 @@
 import React from 'react'
+import { HomeDisplay } from './HomeDisplay'
 
-const Home = () => {
+type Props = {
+    clickLogout: () => void;
+}
+
+const Home = (props: Props) => {
     return (
         <div>
-            <h1>Home</h1>
+           <HomeDisplay clickLogout={props.clickLogout} />
         </div>
     )
 }
