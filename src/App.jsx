@@ -7,7 +7,7 @@ function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])
@@ -23,13 +23,13 @@ function App() {
   }
 
   const protectedViews = () => {
-    return(sessionToken === localStorage.getItem('token') && sessionToken !== 'undefined' ? 
-    <div>
+    return (sessionToken === localStorage.getItem('token') && sessionToken !== 'undefined' ?
+      <div>
         <Router>
-          <Home clickLogout={clearToken} token={sessionToken}  />
+          <Home clickLogout={clearToken} token={sessionToken} />
         </Router>
-    </div>
-    : <Auth updateToken={updateToken} />)
+      </div>
+      : <Auth updateToken={updateToken} />)
   }
 
   return (
