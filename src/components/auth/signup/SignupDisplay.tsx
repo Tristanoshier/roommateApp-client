@@ -22,8 +22,8 @@ export const SignupDisplay = (props: Props) => {
                 <input onChange={e => props.setPassword(e.target.value)} type="password" value={props.password} placeholder="password"></input>
                 <br />
                 <label>Are you in a house or an apartment</label>
-                <button type="button" onClick={() => props.house}>house</button>
-                <button type="button" onClick={() => props.apartment}>apartment</button>
+                <button type="button" onClick={props.house}>house</button>
+                <button type="button" onClick={props.apartment}>apartment</button>
                 <br />
                 <button type="submit">Signup</button>
             </form>

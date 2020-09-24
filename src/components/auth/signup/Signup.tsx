@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { SignupDisplay } from './SignupDisplay';
+import axios from 'axios';
+import APIURL from '../../../helpers/environment';
 
 type Props = {
     updateToken: (newToken: string) => void;
@@ -12,18 +14,9 @@ export const Signup = (props: Props) => {
 
     let handleSubmit = (event: any) => {
         event.preventDefault();
-        fetch(`http://localhost:3001/placeofliving/signup`, {
-            method: 'POST',
-            body: JSON.stringify({ name: name, password: password, isHouse: isHouse }),
-            headers: new Headers({
-                'Content-Type' : 'application/json'
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            props.updateToken(data.sessionToken)
-        })
+        axios.post(`${APIURL}/placeofliving/signup`, {
+            name: name, password: password, isHouse: isHouse
+        }).then(response => props.updateToken(response.data.sessionToken));
     }
 
     let house = () => {
