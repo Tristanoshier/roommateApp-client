@@ -11,6 +11,6 @@ switch (window.location.hostname) {
         break;
     default:
         APIURL = 'http://localhost:3001';
-}
+};
 
 export default APIURL;
