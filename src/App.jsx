@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Auth from './components/auth/Auth';
 import Home from './components/site/Home';
@@ -33,9 +33,9 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       {protectedViews()}
-    </div>
+    </Fragment>
   );
 }
 

@@ -1,14 +1,15 @@
 import React from 'react'
+import  { Navbar } from './Navbar'
 
 type Props = {
     clickLogout: () => void;
+    token: string;
 }
 
 export const HomeDisplay = (props: Props) => {
     return (
         <div>
-            <h1>Home</h1>
-            <button onClick={props.clickLogout}>Log out</button>
+            <Navbar clickLogout={props.clickLogout} token={props.token} />
         </div>
     )
 }
