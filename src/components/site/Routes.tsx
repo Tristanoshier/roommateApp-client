@@ -7,7 +7,7 @@ import { Dashboard } from '../dashboard/Dashboard';
 
 type Props = {
     token: string;
-}
+};
 
 export const Routes = (props: Props) => {
     return (
@@ -20,4 +20,4 @@ export const Routes = (props: Props) => {
             </Switch>
         </Fragment>
     );
-}
+};

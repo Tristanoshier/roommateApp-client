@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
 import { Nav, NavItem, Button } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Routes } from './Routes';
 
 type Props = {
     clickLogout: () => void;
     token: string;
-}
+};
 
 export const Navbar = (props: Props) => {
     return (
         <Fragment>
-            <Nav className="py-md-3 nav-look">
+            <Nav>
                 <NavItem>
                     <Link to="/dashboard">Roommate</Link>
                 </NavItem>
@@ -28,7 +28,7 @@ export const Navbar = (props: Props) => {
                     <Button onClick={props.clickLogout}>Log out</Button>
                 </NavItem>
             </Nav>
-            <Routes token={props.token}/>
+            <Routes token={props.token} />
         </Fragment>
     );
-}
+};
