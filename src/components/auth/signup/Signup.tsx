@@ -39,7 +39,7 @@ export const Signup = (props: Props) => {
                 setIsHouse={setIsHouse}
                 house={house}
                 apartment={apartment}
-             />
+            />
         </div>
     )
 }
