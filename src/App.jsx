@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Auth from './components/auth/Auth';
 import Home from './components/site/Home';
@@ -9,34 +9,34 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
-    }
-  }, [])
+    };
+  }, []);
 
-  const updateToken = (newToken) => {
+  const updateToken = newToken => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-  }
+  };
 
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
-  }
+  };
 
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') && sessionToken !== 'undefined' ?
-      <div>
+      <Fragment>
         <Router>
           <Home clickLogout={clearToken} token={sessionToken} />
         </Router>
-      </div>
-      : <Auth updateToken={updateToken} />)
-  }
+      </Fragment>
+      : <Auth updateToken={updateToken} />);
+  };
 
   return (
-    <div>
+    <Fragment>
       {protectedViews()}
-    </div>
+    </Fragment>
   );
-}
+};
 
 export default App;

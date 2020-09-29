@@ -4,7 +4,7 @@ import { Login } from './login/Login'
 
 type Props = {
     updateToken: (newToken: string) => void;
-}
+};
 
 export const AuthDisplay = (props: Props) => {
     return (
