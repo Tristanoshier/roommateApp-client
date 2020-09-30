@@ -10,6 +10,8 @@ type Props = {
     setIsHouse: Dispatch<SetStateAction<boolean>>;
     house: () => void;
     apartment: () => void;
+    isLogin: boolean;
+    setIsLogin: Dispatch<SetStateAction<boolean>>;  
 };
 
 export const SignupDisplay = (props: Props) => {
@@ -26,6 +28,11 @@ export const SignupDisplay = (props: Props) => {
                 <button type="button" onClick={props.apartment}>apartment</button>
                 <br />
                 <button type="submit">Signup</button>
+                <br />
+                <br />
+                <p onClick={() => props.setIsLogin(!props.isLogin)}>
+                    {props.isLogin ? "Don't have an account? Sign up here." : "Already have an account? Login here."}
+                </p>
             </form>
         </Fragment>
     );

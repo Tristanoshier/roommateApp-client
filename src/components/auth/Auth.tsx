@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AuthDisplay } from './AuthDisplay';
 
 type Props = {
@@ -6,9 +6,10 @@ type Props = {
 };
 
 const Auth = (props: Props) => {
+    const [isLogin, setIsLogin] = useState(true);
     return (
         <div>
-            <AuthDisplay updateToken={props.updateToken} />
+            <AuthDisplay updateToken={props.updateToken} isLogin={isLogin} setIsLogin={setIsLogin} />
         </div>
     );
 };

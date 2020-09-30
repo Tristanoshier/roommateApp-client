@@ -1,10 +1,12 @@
-import React, { Fragment, useState } from 'react';
+import React, { Dispatch, Fragment, SetStateAction, useState } from 'react';
 import { SignupDisplay } from './SignupDisplay';
 import axios from 'axios';
 import APIURL from '../../../helpers/environment';
 
 type Props = {
     updateToken: (newToken: string) => void;
+    isLogin: boolean;
+    setIsLogin: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Signup = (props: Props) => {
@@ -39,7 +41,9 @@ export const Signup = (props: Props) => {
                 setIsHouse={setIsHouse}
                 house={house}
                 apartment={apartment}
+                isLogin={props.isLogin}
+                setIsLogin={props.setIsLogin}
             />
         </Fragment>
-    )
-}
+    );
+};
