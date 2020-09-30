@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { DashboardDisplay } from './DashboardDisplay';
 
 type Props = {
     token: string;
@@ -7,7 +8,7 @@ type Props = {
 export const Dashboard = (props: Props) => {
     return (
         <Fragment>
-            <h1>Dashboard</h1>
+          <DashboardDisplay token={props.token} />
         </Fragment>
     );
 };

@@ -22,7 +22,7 @@ export const Navbar = (props: Props) => {
                     <Link to="/tobuy">To Buy</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/people">People</Link>
+                    <Link to="/roommates">Roommates</Link>
                 </NavItem>
                 <NavItem>
                     <Button onClick={props.clickLogout}>Log out</Button>
