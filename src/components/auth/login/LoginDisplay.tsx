@@ -14,16 +14,16 @@ export const LoginDisplay = (props: Props) => {
     return (
         <Fragment>
             <h1>Login</h1>
-            <form onSubmit={props.handleSubmit}>
-                <input onChange={e => props.setName(e.target.value)} value={props.name} placeholder="name of place"></input>
+            <form onSubmit={props.handleSubmit} autoComplete='off'>
+                <input onChange={e => props.setName(e.target.value)} value={props.name} placeholder='name of place'></input>
                 <br />
-                <input onChange={e => props.setPassword(e.target.value)} type="password" value={props.password} placeholder="password"></input>
+                <input onChange={e => props.setPassword(e.target.value)} type='password' value={props.password} placeholder='password'></input>
                 <br />
-                <button type="submit">Login</button>
+                <button type='submit'>Login</button>
                 <br />
                 <br />
                 <p onClick={() => props.setIsLogin(!props.isLogin)}>
-                    {props.isLogin ? "Don't have an account? Sign up here." : "Already have an account? Login here."}
+                    {props.isLogin ? "Don't have an account? Sign up here." : 'Already have an account? Login here.'}
                 </p>
             </form>
         </Fragment>

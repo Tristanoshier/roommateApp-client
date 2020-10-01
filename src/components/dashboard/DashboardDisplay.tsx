@@ -4,10 +4,10 @@ type Props = {
     token: string;
 };
 
-export const People = (props: Props) => {
+export const DashboardDisplay = (props: Props) => {
     return (
         <Fragment>
-            <h1>People</h1>
+              <h1>Dashboard</h1>
         </Fragment>
     );
 };
