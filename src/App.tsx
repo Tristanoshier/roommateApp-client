@@ -1,18 +1,18 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, RouteComponentProps, withRouter } from 'react-router-dom';
 import Auth from './components/auth/Auth';
 import Home from './components/site/Home';
 
-function App() {
+const App: React.FC<RouteComponentProps> = () => {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      setSessionToken(localStorage.getItem('token'));
+      setSessionToken(localStorage.getItem('token') || 'undefined');
     };
   }, []);
 
-  const updateToken = newToken => {
+  const updateToken = (newToken: any) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
   };
@@ -39,4 +39,4 @@ function App() {
   );
 };
 
-export default App;
+export default withRouter(App);

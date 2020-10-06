@@ -2,10 +2,13 @@ import React, { Fragment } from 'react';
 import { Nav, NavItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Routes } from './Routes';
+import { IRoommate } from '../../models/roommate';
 
 type Props = {
     clickLogout: () => void;
     token: string;
+    roommates: IRoommate[];
+    getAllRoommates: () => void;
 };
 
 export const Navbar = (props: Props) => {
@@ -28,7 +31,7 @@ export const Navbar = (props: Props) => {
                     <Button onClick={props.clickLogout}>Log out</Button>
                 </NavItem>
             </Nav>
-            <Routes token={props.token} />
+            <Routes token={props.token} roommates={props.roommates} getAllRoommates={props.getAllRoommates} />
         </Fragment>
     );
 };

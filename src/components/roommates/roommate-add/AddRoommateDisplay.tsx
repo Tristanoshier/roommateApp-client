@@ -1,4 +1,5 @@
 import React, { Dispatch, Fragment, SetStateAction } from 'react';
+import { Button } from 'semantic-ui-react';
 
 type Props = {
     token: string;
@@ -25,7 +26,7 @@ export const AddRoommateDisplay = (props: Props) => {
                 <br/>
                 <input onChange={e => props.setAvatar(e.target.value)} value={props.avatar} placeholder='avatar picker eventually' />
                 <br/>
-                <button type='submit'>Add</button>
+                <Button type='submit'>Add</Button>
             </form>
         </Fragment>
     );
