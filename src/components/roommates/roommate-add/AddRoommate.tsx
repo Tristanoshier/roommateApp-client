@@ -38,10 +38,13 @@ export const AddRoommate = (props: Props) => {
         return response;
     };
 
+    const cancel = () => {
+        setRedirect(true);
+    };
 
     if (redirect) {
         return <Redirect to='/roommates' />
-    }
+    };
 
     return (
         <Fragment>
@@ -56,7 +59,7 @@ export const AddRoommate = (props: Props) => {
                 avatar={avatar}
                 setAvatar={setAvatar}
                 addRoommate={addRoommate}
-                
+                cancel={cancel}
             />
         </Fragment>
     );
