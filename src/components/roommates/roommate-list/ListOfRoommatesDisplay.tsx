@@ -13,7 +13,7 @@ export const ListOfRoommatesDisplay = (props: Props) => {
             {props.roommates.map((roommate, index) => {
                 return (
                     <ul key={index}>
-                        <li >{roommate.firstName} {roommate.lastName} {roommate.phoneNumber}</li>
+                        <li>{roommate.firstName} {roommate.lastName} {roommate.phoneNumber}</li>
                         <button onClick={() => props.deleteRoommate(roommate.id)}>X</button>
                     </ul>
                 )

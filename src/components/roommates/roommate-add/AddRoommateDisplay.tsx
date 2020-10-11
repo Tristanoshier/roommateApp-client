@@ -12,6 +12,7 @@ type Props = {
     avatar: string;
     setAvatar: Dispatch<SetStateAction<string>>;
     addRoommate: (event: any) => void;
+    cancel: () => void;
 };
 
 export const AddRoommateDisplay = (props: Props) => {
@@ -27,6 +28,7 @@ export const AddRoommateDisplay = (props: Props) => {
                 <input onChange={e => props.setAvatar(e.target.value)} value={props.avatar} placeholder='avatar picker eventually' />
                 <br/>
                 <Button type='submit'>Add</Button>
+                <Button onClick={props.cancel} type='button'>Cancel</Button>
             </form>
         </Fragment>
     );
