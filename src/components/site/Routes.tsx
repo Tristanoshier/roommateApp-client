@@ -6,12 +6,15 @@ import { Roommates } from '../roommates/Roommates'
 import { Dashboard } from '../dashboard/Dashboard';
 import { AddRoommate } from '../roommates/roommate-add/AddRoommate';
 import { IRoommate } from '../../models/roommate';
+import { EditRoommate } from '../roommates/roommate-edit/EditRoommate';
 
 
 type Props = {
     token: string;
     roommates: IRoommate[];
     getAllRoommates: () => void;
+    editRoommate: (roommate: IRoommate) => void;
+    roommateUpdate: IRoommate | undefined;
 };
 
 export const Routes = (props: Props) => {
@@ -26,6 +29,7 @@ export const Routes = (props: Props) => {
                         token={props.token}
                         roommates={props.roommates}
                         getAllRoommates={props.getAllRoommates}
+                        editRoommate={props.editRoommate}
                     />
                 </Route>
                 <Route exact path='/roommates/add'>
@@ -34,6 +38,14 @@ export const Routes = (props: Props) => {
                         roommates={props.roommates}
                         getAllRoommates={props.getAllRoommates}
                     />
+                </Route>
+                <Route exact path='/roommates/update'>
+                    <EditRoommate
+                        token={props.token}
+                        roommates={props.roommates}
+                        getAllRoommates={props.getAllRoommates}
+                        roommateUpdate={props.roommateUpdate}
+                     />
                 </Route>
             </Switch>
         </Fragment>
