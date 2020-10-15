@@ -9,6 +9,8 @@ type Props = {
     token: string;
     roommates: IRoommate[];
     getAllRoommates: () => void;
+    editRoommate: (roommate: IRoommate) => void;
+    roommateUpdate: IRoommate | undefined;
 };
 
 export const Navbar = (props: Props) => {
@@ -31,7 +33,13 @@ export const Navbar = (props: Props) => {
                     <Button onClick={props.clickLogout}>Log out</Button>
                 </NavItem>
             </Nav>
-            <Routes token={props.token} roommates={props.roommates} getAllRoommates={props.getAllRoommates} />
+            <Routes 
+                token={props.token} 
+                roommates={props.roommates} 
+                getAllRoommates={props.getAllRoommates}
+                editRoommate={props.editRoommate}
+                roommateUpdate={props.roommateUpdate}    
+            />
         </Fragment>
     );
 };

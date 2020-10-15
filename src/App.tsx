@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router, RouteComponentProps, withRouter } from 'react-router-dom';
 import Auth from './components/auth/Auth';
-import Home from './components/site/Home';
+import Home from './components/site/Home/Home';
 
 const App: React.FC<RouteComponentProps> = () => {
   const [sessionToken, setSessionToken] = useState('');

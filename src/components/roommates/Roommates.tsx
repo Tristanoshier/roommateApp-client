@@ -6,6 +6,7 @@ type Props = {
     token: string;
     roommates: IRoommate[];
     getAllRoommates: () => void;
+    editRoommate: (roommate: IRoommate) => void;
 };
 
 export const Roommates = (props: Props) => {
@@ -15,6 +16,7 @@ export const Roommates = (props: Props) => {
                 token={props.token} 
                 roommates={props.roommates} 
                 getAllRoommates={props.getAllRoommates}
+                editRoommate={props.editRoommate}
             />
         </Fragment>
     );
