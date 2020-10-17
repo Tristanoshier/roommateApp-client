@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import { Nav, NavItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Routes } from './Routes';
-import { IRoommate } from '../../models/roommate';
+import { IRoommate } from '../../models/IRoommate';
+import { IStoreItem } from '../../models/IStoreItem';
 
 type Props = {
     clickLogout: () => void;
@@ -11,6 +12,8 @@ type Props = {
     getAllRoommates: () => void;
     editRoommate: (roommate: IRoommate) => void;
     roommateUpdate: IRoommate | undefined;
+    getAllStoreItems: () => void;
+    storeItems: IStoreItem[];
 };
 
 export const Navbar = (props: Props) => {
@@ -38,7 +41,9 @@ export const Navbar = (props: Props) => {
                 roommates={props.roommates} 
                 getAllRoommates={props.getAllRoommates}
                 editRoommate={props.editRoommate}
-                roommateUpdate={props.roommateUpdate}    
+                roommateUpdate={props.roommateUpdate}
+                getAllStoreItems={props.getAllStoreItems}
+                storeItems={props.storeItems}
             />
         </Fragment>
     );

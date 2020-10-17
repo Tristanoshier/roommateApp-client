@@ -4,4 +4,4 @@ export interface IRoommate {
     lastName: string;
     phoneNumber?: string;
     avatar?: string;
-}
+};

@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import { IRoommate } from '../../../models/roommate';
+import { IRoommate } from '../../../models/IRoommate';
 import { HomeDisplay } from './HomeDisplay';
 import axios from 'axios';
 import APIURL from '../../../helpers/environment';
+import { IStoreItem } from '../../../models/IStoreItem';
 
 type Props = {
     clickLogout: () => void;
@@ -11,8 +12,8 @@ type Props = {
 
 const Home = (props: Props) => {
     const [roommates, setRoommates] = useState<IRoommate[]>([]);
+    const [storeItems, setStoreItems] = useState<IStoreItem[]>([]);
     const [roommateUpdate, setRoommateUpdate] = useState<IRoommate | undefined>();
-    
 
     async function getAllRoommates() {
         const response: any = await axios.get(`${APIURL}/user/find`,
@@ -21,9 +22,16 @@ const Home = (props: Props) => {
         return response;
     };
 
+    async function getAllStoreItems() {
+        const response: any = await axios.get(`${APIURL}/storeitem/find`,
+            { headers: { 'Content-Type': 'application/json', 'Authorization': props.token } });
+            setStoreItems(response.data.storeItems)
+            return response;
+    };
+
     const editRoommate = (roommate: IRoommate) => {
         setRoommateUpdate(roommate);
-    }
+    };
     
     return (
         <Fragment>
@@ -34,6 +42,8 @@ const Home = (props: Props) => {
                 getAllRoommates={getAllRoommates} 
                 editRoommate={editRoommate}
                 roommateUpdate={roommateUpdate}
+                getAllStoreItems={getAllStoreItems}
+                storeItems={storeItems}
             />
         </Fragment>
     );

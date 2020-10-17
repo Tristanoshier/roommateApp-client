@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { ListOfRoommatesDisplay } from './ListOfRoommatesDisplay';
-import { IRoommate } from '../../../models/roommate';
+import { IRoommate } from '../../../models/IRoommate';
 import APIURL from '../../../helpers/environment';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ export const ListOfRoommates = (props: Props) => {
     }, []);
 
     async function deleteRoommate(id: number){
-        var response = await axios.delete(`${APIURL}/user/delete/${id}`, {
+        var response: any = await axios.delete(`${APIURL}/user/delete/${id}`, {
             headers:{'Content-Type': 'application/json', 'Authorization': props.token}
         }).then(() => props.getAllRoommates());
         return response.data;
