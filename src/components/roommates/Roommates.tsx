@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react';
-import { IRoommate } from '../../models/roommate';
+import React, { Fragment } from 'react';
+import { IRoommate } from '../../models/IRoommate';
 import { RoommatesDisplay } from './RoommatesDisplay';
 
 type Props = {

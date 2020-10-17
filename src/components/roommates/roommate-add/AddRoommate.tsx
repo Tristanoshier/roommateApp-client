@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { AddRoommateDisplay } from './AddRoommateDisplay';
 import APIURL from '../../../helpers/environment';
 import axios from 'axios';
-import { IRoommate } from '../../../models/roommate';
+import { IRoommate } from '../../../models/IRoommate';
 import { Redirect } from 'react-router-dom';
 
 type Props = {

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
-import { IRoommate } from '../../models/roommate';
+import { IRoommate } from '../../models/IRoommate';
 import { ListOfRoommates } from './roommate-list/ListOfRoommates';
 
 type Props = {

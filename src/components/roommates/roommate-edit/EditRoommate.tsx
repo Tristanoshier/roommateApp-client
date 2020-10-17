@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import APIURL from '../../../helpers/environment';
-import { IRoommate } from '../../../models/roommate';
+import { IRoommate } from '../../../models/IRoommate';
 import { EditRoommateDisplay } from './EditRoommateDisplay';
 import { Redirect } from 'react-router-dom';
 

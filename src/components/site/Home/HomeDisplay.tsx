@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { IRoommate } from '../../../models/roommate';
+import { IRoommate } from '../../../models/IRoommate';
+import { IStoreItem } from '../../../models/IStoreItem';
 import { Navbar } from '../Navbar';
 
 type Props = {
@@ -9,6 +10,8 @@ type Props = {
     getAllRoommates: () => void;
     editRoommate: (roommate: IRoommate) => void;
     roommateUpdate: IRoommate | undefined;
+    getAllStoreItems: () =>  void;
+    storeItems: IStoreItem[];
 };
 
 export const HomeDisplay = (props: Props) => {
@@ -21,6 +24,8 @@ export const HomeDisplay = (props: Props) => {
                 getAllRoommates={props.getAllRoommates}
                 editRoommate={props.editRoommate}
                 roommateUpdate={props.roommateUpdate}
+                getAllStoreItems={props.getAllStoreItems}
+                storeItems={props.storeItems}
             />
         </Fragment>
     );
