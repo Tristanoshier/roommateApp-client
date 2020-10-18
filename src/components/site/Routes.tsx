@@ -36,7 +36,7 @@ export const Routes = (props: Props) => {
                         getAllStoreItems={props.getAllStoreItems}
                     />
                 </Route>
-                <Route exact path="tobuy/add">
+                <Route exact path="/tobuy/add">
                     <AddStoreItem
                         token={props.token}
                         storeItems={props.storeItems}
